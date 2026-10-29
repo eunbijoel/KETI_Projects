@@ -31,7 +31,9 @@ ollama pull model
 
 1. VS Code에서 Extensions 검색 또는 `Ctrl+Shift+X` → `Continue` 검색
 2. **Continue 확장** 설치 →  **open-source AI code agent** (`Continue.continue`) 왼쪽 **Continue 아이콘** 클릭
-3. 첫 화면에서 `API Key` **옆** `Local` 클릭:  ![](file:///C:/Users/keti/AppData/Local/Temp/cad1bf49-026b-4aa4-b6c3-ea7f08fcc75e_continue-tutorial.zip.75e/continue-tutorial/images/02-local.png)
+3. 첫 화면에서 `API Key` **옆** `Local` 클릭:
+<img width="694" height="525" alt="02-local" src="https://github.com/user-attachments/assets/3c0cb5bd-c7b0-4b33-9d0a-88a67c531d34" />
+
 
 *① Continue 패널 열기 → ② Local 선택. 이번 실습에서는 API Key를 입력하지 않습니다.*
 
@@ -94,7 +96,8 @@ Continue에서 `+` **→ 새 대화 →** `Gemma 3 12B Local` **선택 →** `Ch
 
 모델만 연결되면 **파일 읽기/쓰기, 코드 실행,** `@`**로 파일 올리기** 같은 기능은 Agent 모드에서 **기본 제공**됨. 별도 툴 설치 없이 바로 사용 가능:
 
-![](file:///C:/Users/keti/AppData/Local/Temp/be3b3a8f-80d7-4c64-8b36-c0a69db27e5c_continue-tutorial.zip.e5c/continue-tutorial/images/03-code.png)
+<img width="648" height="466" alt="03-code" src="https://github.com/user-attachments/assets/e1d1d676-f51b-40a9-97b2-97124d84e85c" />
+
 
 | 모드 | 할 수 있는 것 |
 |---|---|
