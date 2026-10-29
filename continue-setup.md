@@ -4,7 +4,8 @@
 
 > Continue = IDE 안에서 AI가 파일 읽고/고치고/명령 실행하게 해주는 오픈소스 코딩 에이전트  
 > Deep Agents(`deepagents-code`) = 코드로 에이전트 루프·메모리·서브에이전트·커스텀 툴을 직접 조립
-> 공식 문서: https://docs.continue.dev
+
+공식 문서: https://docs.continue.dev
 
 ---
 
@@ -17,9 +18,9 @@
 ```powershell
 ollama serve          # 안 떠 있으면
 ollama list
-ollama pull qwen2.5-coder:14b 
+ollama pull  gemma3:27b
 또는 
-ollama pull gemma3:27b
+ollama pull model
 ```
 
 `모델 예) gemma3:12b`**가 보이면 준비 완료.** 
