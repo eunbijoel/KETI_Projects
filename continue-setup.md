@@ -48,10 +48,6 @@ ollama pull model
 열린 `config.yaml`에서 기존 내용을 복사해 저장한 뒤 모델 이름만 본인 Ollama에 맞게 수정 + `Ctrl+S`**로 저장**
 
 ```yaml
-name: Local Dev
-version: 1.0.0
-schema: v1
-
 name: Main Config
 version: 1.0.0
 schema: v1
