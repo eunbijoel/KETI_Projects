@@ -23,7 +23,7 @@ ollama pull  gemma3:27b
 ollama pull model
 ```
 
-`모델 예) gemma3:12b`**가 보이면 준비 완료.** 
+`모델 예) gemma3:27b`**가 보이면 준비 완료.** 
 
 ---
 
