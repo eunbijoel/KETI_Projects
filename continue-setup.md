@@ -136,32 +136,38 @@ alwaysApply: false
 
 ## 4. Deep Agent vs Continue
 
+둘 다 “모델 + 툴”이지만, **Continue는 IDE 안의 손**, **Deep Agent는 코드로 조립하는 공장**에 가깝다.
+
 ### 4-1. 구조 차이
 
 ```text
 [Continue]
-사람 ↔ IDE 사이드바
-     ↔ 모델
-     ↔ (기본 툴 | MCP)
-     ↔ 워크스페이스 파일/터미널
+사람 ↔ IDE 사이드바 ↔ 모델 ↔ (기본 툴 | MCP) ↔ 워크스페이스
 
-[Deep Agents / deepagents-code]
-사람 ↔ (CLI dcode | Streamlit UI | 자체 WebUI)
-     ↔ create_deep_agent 루프
-     ↔ 빌트인 하네스 툴 (ls/read/write/edit/grep/execute/task…)
-     ↔ 등록한 Python 툴 / MCP / Adapter(도메인 레지스트리)
-     ↔ 메모리 · Skills · 서브에이전트 · (옵션) AutoML·Tool 생성
+[Deep Agents]
+사람 ↔ CLI/자체 UI ↔ create_deep_agent 루프
+     ↔ 하네스 툴 + 직접 정의한 Python 툴 / MCP / Adapter
+     ↔ 메모리 · Skills · 서브에이전트
 ```
 
-### 4-2. 한줄로 고르기
+### 4-2. 뭐가 다른가
 
-| | Continue | Deep Agent |
+| | Continue 제공 툴(+MCP) | Deep Agent |
 |---|---|---|
-| 강점 | IDE에서 바로 고침 · 설정 공유 쉬움 | 도메인 툴 재사용 · 서브에이전트 · 자체 UI/플랫폼 |
-| 약점 | 긴 자동화·제품화가 약함 | 환경 구성·승인/샌드박스 설계 필요 |
+| 진입 | 확장 설치 → IDE에서 바로 | venv/도커·앱 구성 필요 |
+| 툴 | IDE 내장(파일·검색·실행) + MCP | 하네스 기본 툴 + **코드로 툴 정의** + MCP |
+| 자동화 | 한 세션 Agent 루프 | 서브에이전트, 장시간·병렬 위임 |
+| 기억 | Rules / `config.yaml` | `AGENTS.md`, memory, skills |
+| 도메인 | MCP·프롬프트로 설명 | Tool Registry + Adapter로 **기존 분석 툴 재사용** |
+| 강점 / 약점 | 빠른 편집 · 긴 자동화는 약함 | 플랫폼화 쉬움 · 승인·샌드박스는 직접 설계 |
 
-- **Continue** — 에디터 안 수정, 파일/검색/터미널(+MCP)이면 충분할 때  
-- **Deep Agent** — 툴을 코드로 만들고 여러 파이프라인에서 돌리거나, Streamlit/FastAPI가 메인일 때  
+**Continue 툴** = 설치만 하면 파일 읽고/고치고/실행하는 루프가 됨.  
+**Deep Agent** = 같은 도메인 툴을 WebUI·배치·에이전트가 공유하거나, 없는 툴을 만들어 등록할 때 유리.
+
+### 4-3. 언제 뭘 쓰나
+
+- **Continue** — 지금 에디터에서 고치기, 팀원이 IDE만 열면 될 때  
+- **Deep Agent** — 도메인 툴 파이프라인, 자체 UI(`coding-agent` 등), 메모리·서브에이전트가 필요할 때  
 - **같이** — Continue = IDE 손, Deep Agent = 도메인 공장 (MCP는 양쪽에 붙여도 됨)
 
 ---
